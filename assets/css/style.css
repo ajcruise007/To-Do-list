@@ -4,29 +4,25 @@
   font-weight: 720;
   text-align: center;
   color: #444444;
+ 
 }
 
-.select-selected:after {
-  position: absolute;
-  content: '';
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
+ .to-do-app{
+   display: flex;
+   justify-content: space-between;
+ }
 
 .app-body {
   border: 1px solid lightgrey;
   border-bottom-style: solid;
-  /* height: 500px; */
+  
   height: auto;
   width: 600px;
-  margin: 2px auto;
+  margin-left:370px;
   display: flex;
   flex-direction: column;
   background-color: white;
+  
 }
 
 .frst-itm-style {
@@ -56,6 +52,8 @@
   border-right-style: solid;
   border-right-width: thin;
 }
+
+
 .category-margin {
   margin-left: 25px;
 }
@@ -86,7 +84,7 @@
 
 .second-row {
   height: 15%;
-  /* border: 2px solid black; */
+  
   display: flex;
 
   justify-content: space-around;
@@ -95,6 +93,10 @@
   font-size: small;
   color: darkslategray;
   font-weight: 600;
+}
+
+body{
+  color:white;
 }
 
 li {
@@ -109,6 +111,7 @@ li {
 
 .list-item .first-item {
   width: 50%;
+  word-wrap: break-word;
 }
 
 .list-item .second-item {
@@ -143,6 +146,10 @@ ul {
   border-style: none;
 }
 
+#checkboxes:hover{
+  cursor:pointer;
+}
+
 .third-item {
   margin-top: 0px;
   margin-left: 24px;
@@ -153,7 +160,7 @@ ul {
 }
 
 .show-tasks {
-  /* border: 2px solid red; */
+ 
   height: 55%;
 }
 
@@ -222,7 +229,7 @@ button:hover {
   font-family: sans-serif;
   font-size: small;
   color: darkslategray;
-  /* background-color: red; */
+  cursor: pointer;
 }
 
 #due-date-input {
@@ -230,5 +237,10 @@ button:hover {
   border-style: none;
   color: darkslategray;
   font-weight: 600;
-  color: #444444;
+  cursor: pointer;
 }
+
+#date-label{
+  cursor: pointer;
+}
+

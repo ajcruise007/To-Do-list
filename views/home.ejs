@@ -1,113 +1,98 @@
 <html>
-  <head>
-    <title>
-      <%= title %>
-    </title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css" />
-    
-  </head>
 
-  <body>
-    <h1 id="app-heading">To Do</h1>
+<head>
+  <title> <%= title %> </title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="./Dark Theme/style.css">
+</head>
 
+<body>
+  <div class="to-do-app">
     <div class="app-body">
+      <h1 id="app-heading">To Do </h1>
       <div class="description">
         <form action="/create-task" method="POST">
-        <label for="description-input">DESCRIPTION</label><br />
-        <input type="text" name="description" id="description-input" placeholder="What's the plan today?" />
+          <label for="description-input">DESCRIPTION</label><br />
+          <input type="text" name="description" id="description-input" placeholder="What's the plan today?" />
       </div>
-
       <div class="second-row">
         <div class="category">
           <div class="category-margin">
-          <label for="category-input">CATEGORY</label><br />
-          
-          <select name="category" id="category-input" >
-            <option value="Work">Work</option>
-            <option value="Personal">Personal</option>
-            <option value="College">College</option>
-            <option value="Others">Others</option>
-            <option selected id="opt-selected">Choose a category</option>
-            
-          </select>
-
-        </div>
+            <label for="category-input" id="cat-label">CATEGORY</label><br />
+            <select name="category" id="category-input">
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="College">College</option>
+              <option value="Others">Others</option>
+              <option selected id="opt-selected">Choose a category</option>
+            </select>
+          </div>
         </div>
         <div class="date">
           <div class="date-margin">
-          <label for="due-date-input">DUE DATE</label><br>
-          <input type="date" name="date" id="due-date-input"  />
+            <label for="due-date-input" id="date-label">DUE DATE</label><br>
+            <input type="date" name="date" id="due-date-input" />
+          </div>
         </div>
-        </div>
-        
       </div>
       <div class="add-del-button">
         <div class="add-task">
           <button type="submit">
-            <span id="add-icon">  
+            <span id="add-icon">
               <i class="fas fa-plus"></i>
-            </span> 
+            </span>
             <span>Task</span>
-        </button>
-      
-      </div>
-    </form>
-         
-          <div class="delete-button">
-            
-            <form action="/delete-task" method="POST">
+          </button>
+        </div>
+        </form>
+        <div class="delete-button">
+          <form action="/delete-task" method="POST">
             <button type="submit">
-            <span id="del-icon">
-              <i class="fas fa-trash"></i>
-            </span>
-              <span>
-              Delete
-            </span>
+              <span id="del-icon">
+                <i class="fas fa-trash"></i>
+              </span>
+              <span> Delete </span>
             </button>
-          </div>
-        
+        </div>
       </div>
       <div class="show-tasks">
-        <ul>
-          <% for(let i of task_List) {%>
-            <div class="single-task"> 
+        <ul> <% for(let i of task_List) {%> <div class="single-task">
             <li class="third-row-list">
-              
-              
-              <div class="list-item"> 
+              <div class="list-item">
                 <div class="first-item">
                   <span class="chkbox">
-                  <input type="checkbox" name = "id" value ="<%= i._id %>" id ="checkboxes">
-                </span>
-                  <span class="frst-itm-style">
-                      <%= i.description  %>
-                    </span>
+                    <input type="checkbox" name="id" value="<%= i._id %>" id="checkboxes">
+                  </span>
+                  <span class="frst-itm-style"> <%= i.description  %> </span>
                 </div>
                 <div class="second-item">
-                  <div class="cat-design">
-               <%= i.category %>
-                 </div>
+                  <div class="cat-design"> <%= i.category %> </div>
+                </div>
               </div>
-              
-                
-               
-           
-            </div>
-            <div class="third-item">
-              <span class="cal-icon">
-              <i class="fas fa-calendar-alt redIcon"></i>   
-            </span>
-              <%= moment( i.date ).format('ll'); %> 
-            </div>
-             </li>
-            </div> 
-          <%}%>
+              <div class="third-item">
+                <span class="cal-icon">
+                  <i class="fas fa-calendar-alt redIcon"></i>
+                </span> <%= moment( i.date ).format('ll'); %> </div>
+            </li>
+          </div> <%}%>
           </ul>
          
       </div>
     </div>
+    <div class="toggle-button">
+      <div id="toggle">
+        <div id="circle" class="animate"></div>
+    </div>
+    <div id="switch-dark">Theme(White)</div>
+  </div>
+ 
+  </div>
+    
+  <script src="/script.js"></script>
 
     <script type="text/javascript" src="/js/home.js"></script>
+    <script src="/Dark Theme/script.js"></script>
   </body>
 </html>

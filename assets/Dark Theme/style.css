@@ -1,0 +1,50 @@
+#toggle {
+    background-color: white;
+   
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-left:10px;
+    
+    
+}
+
+.toggle-button{
+    width: 200px;
+    height: 100px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+#switch-dark{
+    height: 20px;
+    width: 100px;
+    color:black;
+    margin-top:6px;
+
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#circle {
+    /* width: 38px;
+    height: 38px; */
+    width: 28px;
+    height: 28px;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: 1px;
+    transition-duration: 0.5s;
+    margin-left: 1px;
+}
+
+.color-white {
+    color: white;
+}
+
+.bck-color-black {
+    background-color: black;
+}
+

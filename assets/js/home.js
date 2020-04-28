@@ -1,3 +1,5 @@
+
+//To set the color of category cards
 let category = document.getElementsByClassName('cat-design');
 for (let i = 0; i < category.length; i++) {
   if (category[i].innerText == 'Personal') {
@@ -9,5 +11,4 @@ for (let i = 0; i < category.length; i++) {
   }
 }
 
-console.log(category[0].innerText);
-console.log(category[0].style);
+
